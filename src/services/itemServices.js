@@ -1,11 +1,14 @@
 export const additem = async (task, date) => {
-  const response = await fetch("http://localhost:3000/api/todo", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ task, date }),
-  });
+  const response = await fetch(
+    "https://todo-backend-code.onrender.com/api/todos",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ task, date }),
+    }
+  );
   if (!response.ok) {
     throw new Error("Failed to add item");
   }
@@ -13,7 +16,9 @@ export const additem = async (task, date) => {
 };
 
 export const getitem = async () => {
-  const response = await fetch("http://localhost:3000/api/todo");
+  const response = await fetch(
+    "https://todo-backend-code.onrender.com/api/todos"
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch item");
   }
@@ -22,8 +27,11 @@ export const getitem = async () => {
 };
 
 export const deleteitem = async (id) => {
-  const response = await fetch(`http://localhost:3000/api/todo/${id}`, {
-    method: "DELETE",
-  });
+  const response = await fetch(
+    "https://todo-backend-code.onrender.com/api/todos",
+    {
+      method: "DELETE",
+    }
+  );
   return response.json({ id });
 };
