@@ -1,6 +1,6 @@
 export const additem = async (task, date) => {
   const response = await fetch(
-    "https://todo-backend-code.onrender.com/api/todos",
+    "https://todo-backend-code.onrender.com/api/todo",
     {
       method: "POST",
       headers: {
@@ -17,7 +17,7 @@ export const additem = async (task, date) => {
 
 export const getitem = async () => {
   const response = await fetch(
-    "https://todo-backend-code.onrender.com/api/todos"
+    "https://todo-backend-code.onrender.com/api/todo"
   );
   if (!response.ok) {
     throw new Error("Failed to fetch item");
@@ -28,7 +28,7 @@ export const getitem = async () => {
 
 export const deleteitem = async (id) => {
   const response = await fetch(
-    "https://todo-backend-code.onrender.com/api/todos",
+    "https://todo-backend-code.onrender.com/api/todo",
     {
       method: "DELETE",
     }
