@@ -28,7 +28,7 @@ export const getitem = async () => {
 
 export const deleteitem = async (id) => {
   const response = await fetch(
-    "https://todo-backend-code.onrender.com/api/todo",
+    `https://todo-backend-code.onrender.com/api/todo/${id}`,
     {
       method: "DELETE",
     }
